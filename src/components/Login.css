@@ -9,6 +9,8 @@
     justify-content: center;
     z-index: 1;
     border-style: solid;
+    border-color: grey;
+    border-width: 5px;
     
 }
 

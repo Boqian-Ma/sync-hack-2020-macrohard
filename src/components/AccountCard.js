@@ -18,10 +18,10 @@ import { lightBlue } from '@material-ui/core/colors';
 const theme = createMuiTheme({
     palette: {
         primary: {
-          main: lightBlue[500],
+          main: '#355593',
         },
         secondary: {
-          main: lightBlue[500],
+          main: '#355593',
         },
     },  
 });
@@ -53,10 +53,10 @@ export default function MediaCard(props) {
           <Typography gutterBottom variant="h5" component="h2">
             {company.name}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="#355593" component="p">
             Grade: {company.grade}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="#355593" component="p">
             Usage: {company.time} times in 24 hours
           </Typography>
         </CardContent>

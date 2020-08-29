@@ -35,30 +35,14 @@ const PurpleSwitch = withStyles({
 })(Switch);
 
 
-// export default function CustomizedSwitches() {
-//   const [state, setState] = React.useState({
-//     checkedA: true,
-//     checkedB: true,
-//     checkedC: true,
-//     checkedD: true,
-//     checkedE: true,
-//     checkedF: true,
-//     checkedG: true,
-//     checkedH: true,
-//     checkedI: true,
-//     checkedJ: true,
-//   });
-
-//   const handleChange = (event) => {
-//     setState({ ...state, [event.target.name]: event.target.checked });
-//   };
 
 
   const useStyles = makeStyles({
     table: {
-      minWidth:750,
-      padding:10,
-      margin:0
+      minWidth: 1300,
+      padding:0,
+      margin:0,
+      overflow: 'hidden',
     }
   });
 
@@ -112,6 +96,17 @@ const PurpleSwitch = withStyles({
       />,
       </div>
     ),
+    createData(
+      'Address', <p align='left'> 30 Village High Road</p>, <p align='left'> No</p>,
+      <div align='left'>
+        
+      <Switch
+        color='#355593'
+        name="checkedB"
+        inputProps={{ "aria-label": "primary checkbox" }}
+      />,
+      </div>
+    ),
   ];
   
   
@@ -125,14 +120,13 @@ const PurpleSwitch = withStyles({
         <div>
           <h2 style={{color: '#355593' }}>MANAGE PLATFORMS</h2>
           <TableContainer component={Paper}>
-            <Table className={classes.table} aria-label="simple table">
+            <Table overflow-x='hidden' className={classes.table} size = 'small' aria-label="simple table">
               <TableHead>
                 <TableRow>
                   <TableCell>Attribute</TableCell>
                   <TableCell align="left">Content</TableCell>
                   <TableCell align="left">Required</TableCell>
                   <TableCell align="left">Permission</TableCell>
-                  <TableCell align="left"> </TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -141,10 +135,10 @@ const PurpleSwitch = withStyles({
                     <TableCell component="th" scope="row">
                       {row.name}
                     </TableCell>
-                    <TableCell align="right">{row.calories}</TableCell>
-                    <TableCell align="right">{row.fat}</TableCell>
-                    <TableCell align="right">{row.carbs}</TableCell>
-                    <TableCell align="right">{row.protein}</TableCell>
+                    <TableCell align="left">{row.calories}</TableCell>
+                    <TableCell align="left">{row.fat}</TableCell>
+                    <TableCell align="left">{row.carbs}</TableCell>
+                    <TableCell align="left">{row.protein}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

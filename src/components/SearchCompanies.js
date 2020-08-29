@@ -4,7 +4,7 @@ import { SearchBar } from '../components'
 
 export default function SearchCompanies(props) {
     // search bar
-    var companies = ["Facebook", "Instagram", "Reddit", "Twitter"]
+    var companies = ["Facebook", "Instagram", "Reddit", "Twitter", "LinkedIn", "Tinder", "TikTok", "MySpace", "Snapchat", "Amazon", "Google Web Services"]
     const [companyList, setCompanies] = useState(companies)
     async function handleChange(searchTerm) {
         setCompanies(companies.filter((company, key) => {

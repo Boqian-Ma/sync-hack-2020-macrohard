@@ -34,7 +34,7 @@ const PurpleSwitch = withStyles({
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650
+    minWidth: '1500'
   }
 });
 
@@ -140,7 +140,7 @@ export default function ManageAccount() {
       <div>
         <h2 style={{color: '#355593' }}>MANAGE PLATFORMS</h2>
         <TableContainer component={Paper}>
-          <Table className={classes.table} aria-label="simple table">
+          <Table overflow-x='hidden' className={classes.table} aria-label="simple table">
             <TableHead>
               <TableRow>
                 <TableCell>Platform</TableCell>

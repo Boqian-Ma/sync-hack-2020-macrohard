@@ -14,15 +14,17 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import { createMuiTheme }  from '@material-ui/core/styles'
 import { lightBlue } from '@material-ui/core/colors';
 import Button from '@material-ui/core/Button';
+import Avatar from '@material-ui/core/Avatar';
+
 
 
 const theme = createMuiTheme({
     palette: {
         primary: {
-          main: lightBlue[500],
+          main: '#355593',
         },
         secondary: {
-          main: lightBlue[500],
+          main: '#355593',
         },
     },  
 });
@@ -89,7 +91,11 @@ export default function Content(props) {
         <ThemeProvider theme={theme}>
 
         <Card>
-        <img align='centre' className = 'logo' src='./verticallogo.png'></img>   
+        <img align='left' className = 'logo' src='./verticallogo.png'></img>
+        <div align='right'>
+        <Avatar alt="Remy Sharp" src="./person1.jpg"/>
+        <Button><u>sign out</u></Button>  
+        </div>
         
 
   </Card>
