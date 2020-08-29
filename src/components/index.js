@@ -7,4 +7,4 @@ export { default as ManageAccount } from './ManageAccount';
 export { default as PieGraph } from './PieGraph';
 export { default as SearchBar } from './SearchBar';
 export { default as SearchCompanies } from './SearchCompanies';
-export { default as Sidebar } from './Sidebar1';
+export { default as Sidebar } from './Sidebar';

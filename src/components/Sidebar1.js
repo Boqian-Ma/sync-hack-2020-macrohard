@@ -1,53 +1,8 @@
 import "./Sidebar.css";
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 
-function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`vertical-tabpanel-${index}`}
-            aria-labelledby={`vertical-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Box p={3}>
-                    <Typography>{children}</Typography>
-                </Box>
-            )}
-        </div>
-    );
-}
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.paper,
-        display: 'flex',
-        height: 224,
-    },
-    tabs: {
-        borderRight: `1px solid ${theme.palette.divider}`,
-    },
-}));
-
-export default function Sidebar(props) {
-    const show = props.show;
-    const accounts = props.accounts;
-    const classes = useStyles();
-    const [value, setValue] = React.useState(0);
-
-    const handleChange = (event, newValue) => {
-        props.changeView(newValue);
-        setValue(newValue)
-    };
+export default function Sidebar({ width, height, children }) {
+    const [xPosition, setX] = React.useState(-width);
 
     /* const toggleMenu = () => {
         if (xPosition < 0) {
@@ -57,33 +12,28 @@ export default function Sidebar(props) {
         }
     }; */
 
-    function a11yProps(index) {
-        return {
-            id: `vertical-tab-${index}`,
-            'aria-controls': `vertical-tabpanel-${index}`,
-        };
-    }
-
+    React.useEffect(() => {
+        setX(0);
+    }, []);
     return (
-        <div>
-            <Tabs
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                aria-label="Vertical tabs example"
-                onChange={handleChange}
-                className={classes.tabs}>
-                <Tab label="Dashboard" {...a11yProps(0)} />
-                <Tab label="Accounts" {...a11yProps(1)} />
-            </Tabs>
-            {show === "Accounts" && accounts.map((company, idx) => {
-                return (
-                    <Tabs orientation="vertical"
-                        variant="scrollable">
-                        <Tab label={company.name} value={company.name} />
-                    </Tabs>
-                )
-            })}
-        </div>
+        <React.Fragment>
+            <div
+                className="side-bar"
+                style={{
+                    transform: `translatex(${xPosition}px)`,
+                    width: width,
+                    minHeight: '100%'
+                }}
+            >
+                {/* <button
+                    onClick={() => toggleMenu()}
+                    className="toggle-menu"
+                    style={{
+                        transform: `translate(${width}px, 20vh)`
+                    }}
+                ></button> */}
+                <div className="content">{children}</div>
+            </div>
+        </React.Fragment>
     );
 };
