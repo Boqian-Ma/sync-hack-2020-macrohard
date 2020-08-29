@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -15,7 +15,6 @@ import TextField from "@material-ui/core/TextField";
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { blue } from '@material-ui/core/colors';
-
 
 const PurpleSwitch = withStyles({
   switchBase: {
@@ -50,6 +49,27 @@ const rows = [
       align="right"
     />,
     <Tooltip
+      title="A 'D' rating signifies that the company has  many discrepancies in the way that they deal with data privacy. In most cases they have not revealed enough about the way they use your data"
+      arrow
+    >
+      <Button>
+        <b>D</b>
+      </Button>
+    </Tooltip>,
+    <Switch
+      color='#355593'
+      name="checkedB"
+      inputProps={{ "aria-label": "primary checkbox" }}
+    />,
+    <Button variant="contained">Details</Button>
+  ),
+  createData(
+    <Image
+      src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg"
+      aspectRatio="4/1"
+      align="right"
+    />,
+    <Tooltip
       title="A 'C' rating signifies that the company has some degree of data use transparency"
       arrow
     >
@@ -66,8 +86,8 @@ const rows = [
   ),
   createData(
     <Image
-      src="https://agsd.org.uk/wp-content/uploads/2019/02/instagram-logo.png"
-      aspectRatio="4/1"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png"
+      aspectRatio="3/1"
       align="right"
     />,
     <Tooltip
@@ -87,37 +107,16 @@ const rows = [
   ),
   createData(
     <Image
-      src="https://1.bp.blogspot.com/-waG3rYRs9Kg/T8_YfU0AcGI/AAAAAAAAGgg/lBsXlwHZ9r4/s1600/Twitter+logo+2011.png"
-      aspectRatio="3/1.5"
-      align="right"
-    />,
-    <Tooltip
-      title="A 'D' rating signifies that the company has  many discrepancies in the way that they deal with data privacy. In most cases they have not revealed enough about the way they use your data"
-      arrow
-    >
-      <Button>
-        <b>D</b>
-      </Button>
-    </Tooltip>,
-    <Switch
-      color='#355593'
-      name="checkedB"
-      inputProps={{ "aria-label": "primary checkbox" }}
-    />,
-    <Button variant="contained">Details</Button>
-  ),
-  createData(
-    <Image
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png"
+      src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/TikTok_logo.svg/440px-TikTok_logo.svg.png"
       aspectRatio="3/1"
       align="right"
     />,
     <Tooltip
-      title="A 'A' rating signifies that the company has excellent data use transparency. They have made a considerable effort to make the purposes of their use of our data is clear as possible"
+      title="A 'C' rating signifies that the company has some degree of data use transparency"
       arrow
     >
       <Button>
-        <b>A</b>
+        <b>C</b>
       </Button>
     </Tooltip>,
     <Switch

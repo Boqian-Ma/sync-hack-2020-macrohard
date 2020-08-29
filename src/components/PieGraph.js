@@ -4,11 +4,12 @@ import { Doughnut } from 'react-chartjs-2';
 export default function PieGraph(props) {
     const [companies, setCompanies] = useState({});
     useEffect(() => {
-        fetch("http://127.0.0.1:5000/home").then(response =>
-            response.json().then(data => {
-                setCompanies(data.piechart);
-            })
-        )
+        setTimeout(() => {
+            fetch("http://127.0.0.1:5000/home").then(response =>
+                response.json().then(data => {
+                    setCompanies(data.piechart);
+                }))
+        }, 2500);
     });
 
     const data = {
@@ -42,7 +43,7 @@ export default function PieGraph(props) {
     }
 
     return (
-        <div style={{ width: '60%', height: '100%' }}>
+        <div style={{ width: '60%', height: '90%' }}>
             <h2 style={{ color: '#355593' }}>DATA USAGE</h2>
             <Doughnut data={data} options={options}/>
         </div>

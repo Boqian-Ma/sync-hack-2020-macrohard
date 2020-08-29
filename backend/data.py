@@ -203,3 +203,6 @@ def get_frequency_7day(username, company):
             if date_lo <= data['time'] <= date_hi and data['company'] == company:
                 freq[i-1] += 1
     return list(reversed(freq))
+
+def get_feed(username, company):
+    pass

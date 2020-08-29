@@ -39,10 +39,9 @@ const PurpleSwitch = withStyles({
 
   const useStyles = makeStyles({
     table: {
-      minWidth: 1300,
-      padding:0,
+      minWidth: 950,
+      padding:10,
       margin:0,
-      overflow: 'hidden',
     }
   });
 
