@@ -2,6 +2,8 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 const action = (
   <Button color="primary" size="small">
@@ -23,6 +25,7 @@ export default function LongTextSnackbar() {
 
   return (
     <div className={classes.root}>
+    <PerfectScrollbar>
       <SnackbarContent
         message="28/7 | Facebook: Your profile has been used for market sizing."
         action={action}
@@ -47,6 +50,7 @@ export default function LongTextSnackbar() {
         message="27/7 | Facebook: Your age has been used for product planning."
         action={action}
       />
+    </PerfectScrollbar>
     </div>
   );
 }
