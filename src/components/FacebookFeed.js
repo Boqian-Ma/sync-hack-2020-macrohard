@@ -3,6 +3,14 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import 'react-perfect-scrollbar/dist/css/styles.css';
+
+const action = (
+  <Button color="secondary" size="small">
+    Information
+  </Button>
+);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,7 +34,7 @@ export default function LongTextSnackbar() {
 
   return (
     <div className={classes.root}>
-    
+      <h2>Live Feed</h2>
       {data.map((message, key) => {
         return(
           <SnackbarContent
