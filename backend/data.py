@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 
 # datetime(year, month, day, hour, minute, second, microsecond)
 
+grades = 
 
 companies = {   'facebook': ['location','login_location', 'gender, ''following', "connections", 'recent_activities', 'searches'], 
                 'google': ['location','gender', 'age', 'hobbies', 'youtube_history', 'recent_activities', 'searches', 'deletions', 'internship_rejection_emails'], 
