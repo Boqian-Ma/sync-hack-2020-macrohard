@@ -115,6 +115,11 @@ export default function Content(props) {
                     <SharedPersonalData></SharedPersonalData>
                     </div>
                 </div>}
+                <div className='dash-container'>
+                    <div className='bottom-container'>
+                        <FacebookFeed width='100%'></FacebookFeed>
+                    </div>
+                </div>
         </div>
         </ThemeProvider>
     )

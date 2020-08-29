@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -138,7 +139,6 @@ export default function ManageAccount() {
     
     <form className={classes.root} noValidate autoComplete="off">
       <div>
-      <ThemeProvider theme={theme}>
         <h2 style={{color: '#355593' }}>MANAGE PLATFORMS</h2>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
@@ -165,7 +165,6 @@ export default function ManageAccount() {
             </TableBody>
           </Table>
         </TableContainer>
-        </ThemeProvider>
       </div>
     </form>
    
