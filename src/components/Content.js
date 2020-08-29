@@ -1,5 +1,5 @@
 import React from 'react'
-import { AccountCard, FacebookFeed, PieGraph, Sidebar } from '../components';
+import { AccountCard, FacebookFeed, PieGraph, SearchCompanies, Sidebar } from '../components';
 import './Content.css'
 
 export default function Content(props) {
