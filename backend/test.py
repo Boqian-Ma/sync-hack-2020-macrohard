@@ -1,7 +1,8 @@
 from data import *
 
 def test_adduser():
-    print(DATA['users'['username']])
+    print(new_user('lyric', '123456', 'lyric@gmail.com'))
+    
 
 
 if __name__ == "__main__":
