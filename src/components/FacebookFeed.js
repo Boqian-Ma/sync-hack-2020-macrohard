@@ -6,8 +6,8 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
 const action = (
-  <Button color="primary" size="small">
-    More Information
+  <Button color="secondary" size="small">
+    Information
   </Button>
 );
 
