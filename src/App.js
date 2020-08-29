@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Content } from './components'
+import { Content, Login } from './components'
 
 function App() {
+  const [login, setLogin] = useState(false);
+  function toggleOverlay() {
+    setLogin(!login);
+  }
   return (
     <div className="App">
-      <Content></Content>
+      {login && <Content></Content>}
+      { !login &&
+      <div className="overlay">
+          <Login sign={toggleOverlay} ></Login>
+      </div> }
     </div>
   );
 }

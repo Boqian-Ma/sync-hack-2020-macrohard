@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import { Grid, Card, Button, Typography } from '@material-ui/core';
-import { AccountCard, FacebookFeed, Sidebar } from '../components';
+import React from 'react'
+import { AccountCard, FacebookFeed, PieGraph, Sidebar } from '../components';
 import './Content.css'
 
 export default function Content(props) {
@@ -28,6 +27,7 @@ export default function Content(props) {
                     <AccountCard className="item"></AccountCard>
                 </div>
                 <div className="bottom-container">
+                    <PieGraph></PieGraph>
                     <FacebookFeed></FacebookFeed>
                 </div>
             </div>
