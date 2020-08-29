@@ -103,10 +103,15 @@ This was our second hackathon together and, learning from the previous experienc
 
 ### Roles
 Adam Ma: Full stack
+
 Lyric Wang: Pitch, backend, O-O design
+
 Matthew Juan: Chrome extension, backend
+
 Jeremy Lim: Frontend, design
+
 Vicky Hu: Pitch, frontend, design
+
 Jeremy Chea: Pitch, frontend
 
 ### What’s next for us 
