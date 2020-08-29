@@ -6,6 +6,8 @@ export { default as LineGraph } from './LineGraph';
 export { default as Login } from './Login';
 export { default as ManageAccount } from './ManageAccount';
 export { default as PieGraph } from './PieGraph';
+export { default as Profile } from './Profile';
 export { default as SearchBar } from './SearchBar';
 export { default as SearchCompanies } from './SearchCompanies';
+export { default as SharedPersonalData } from './SharedPersonalData';
 export { default as Sidebar } from './Sidebar';

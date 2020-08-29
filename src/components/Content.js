@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AccountCard, FacebookFeed, LineGraph, ManageAccount, PieGraph, SearchCompanies, Sidebar } from '../components';
+import { AccountCard, FacebookFeed, LineGraph, ManageAccount, PieGraph, SearchCompanies, SharedPersonalData, Sidebar } from '../components';
 import { Link } from '@material-ui/core';
 
 import { green } from '@material-ui/core/colors';
@@ -124,9 +124,10 @@ export default function Content(props) {
                         <LineGraph companies={accounts}></LineGraph>
                     </div>
                     <div className="right-container">
-                    <PerfectScrollbar style={{ width: '100%' }}>
-                        <FacebookFeed></FacebookFeed>
-                    </PerfectScrollbar>
+                        {/* <PerfectScrollbar style={{ width: '100%' }}>
+                            <FacebookFeed></FacebookFeed>
+                    </PerfectScrollbar> */}
+                    <SharedPersonalData></SharedPersonalData>
                     </div>
                 </div>}
         </div>
