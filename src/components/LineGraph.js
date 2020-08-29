@@ -41,6 +41,7 @@ export default function LineGraph(props) {
     };
 
     const options = {
+        color: '#355593',
         width: '50%',
         maxHeight: '400px',
         responsive: true,

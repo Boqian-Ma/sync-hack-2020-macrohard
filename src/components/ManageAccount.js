@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -16,18 +16,22 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { blue } from '@material-ui/core/colors';
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      // Purple and green play nicely together.
-      main: blue[500],
+
+const PurpleSwitch = withStyles({
+  switchBase: {
+    color: '#355593',
+    '&$checked': {
+      color: '#355593',
     },
-    secondary: {
-      // This is green.A700 as hex.
-      main: '#11cb5f',
+    '&$checked + $track': {
+      backgroundColor: '#355593',
     },
   },
-});
+  checked: {},
+  track: {},
+})(Switch);
+
+
 const useStyles = makeStyles({
   table: {
     minWidth: 650
@@ -54,7 +58,7 @@ const rows = [
       </Button>
     </Tooltip>,
     <Switch
-      color="primary"
+      color='#355593'
       name="checkedB"
       inputProps={{ "aria-label": "primary checkbox" }}
     />,
@@ -75,7 +79,7 @@ const rows = [
       </Button>
     </Tooltip>,
     <Switch
-      color="primary"
+      color='#355593'
       name="checkedB"
       inputProps={{ "aria-label": "primary checkbox" }}
     />,
@@ -96,7 +100,7 @@ const rows = [
       </Button>
     </Tooltip>,
     <Switch
-      color="primary"
+      color='#355593'
       name="checkedB"
       inputProps={{ "aria-label": "primary checkbox" }}
     />,
@@ -117,7 +121,7 @@ const rows = [
       </Button>
     </Tooltip>,
     <Switch
-      color='lightBlue'
+      color='#355593'
       name="checkedB"
       inputProps={{ "aria-label": "primary checkbox" }}
     />,
@@ -134,7 +138,7 @@ export default function ManageAccount() {
     
     <form className={classes.root} noValidate autoComplete="off">
       <div>
-      <ThemeProvider theme={theme}>
+        <h2 style={{color: '#355593' }}>MANAGE PLATFORMS</h2>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
@@ -160,7 +164,6 @@ export default function ManageAccount() {
             </TableBody>
           </Table>
         </TableContainer>
-        </ThemeProvider>
       </div>
     </form>
    

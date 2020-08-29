@@ -22,7 +22,7 @@ export default function SearchCompanies(props) {
             <div style={{ float: 'centre' }}>
                 {companyList.map((company, idx) => {
                     return(
-                        <p>{company}</p>
+                        <p align='centre'>{company}</p>
                     );
                 })}
             </div>
