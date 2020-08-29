@@ -7,14 +7,15 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
 const action = (
-  <Button color="primary" size="small">
-    More Information
+  <Button color="secondary" size="small">
+    Information
   </Button>
 );
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 600,
+    maxWidth: '100%',
+    minHeight: 500,
     "& > * + *": {
       marginTop: theme.spacing(2)
     }
@@ -24,41 +25,23 @@ const useStyles = makeStyles((theme) => ({
 export default function LongTextSnackbar() {
   const classes = useStyles();
 
+  const data = ["28/7 | Facebook: Your profile has been used for market sizing.",
+  "28/7 | Facebook: Your location has been used for geographic advertisements.",
+  "27/7 | Facebook: Your age has been used for product advertisements.",
+  "28/7 | Facebook: Your profile has been used for market sizing.",
+  "28/7 | Facebook: Your location has been used for geographic advertisements.",
+  "27/7 | Facebook: Your age has been used for product planning."]
+
   return (
     <div className={classes.root}>
-      <Typography><b>Feed</b></Typography>
-    <PerfectScrollbar>
-      <SnackbarContent
-        style={{backgroundColor: 'lightBlue'}}
-        message="28/7 | Facebook: Your profile has been used for market sizing."
-        action={action}
-      />
-      <SnackbarContent
-        style={{backgroundColor: 'lightBlue'}}
-        message="28/7 | Facebook: Your location has been used for geographic advertisements."
-        action={action}
-      />
-      <SnackbarContent
-        style={{backgroundColor: 'lightBlue'}}
-        message="27/7 | Facebook: Your age has been used for product advertisements."
-        action={action}
-      />
-      <SnackbarContent
-        style={{backgroundColor: 'lightBlue'}}
-        message="28/7 | Facebook: Your profile has been used for market sizing."
-        action={action}
-      />
-      <SnackbarContent
-        style={{backgroundColor: 'lightBlue'}}
-        message="28/7 | Facebook: Your location has been used for geographic advertisements."
-        action={action}
-      />
-      <SnackbarContent
-        style={{backgroundColor: 'lightBlue'}}
-        message="27/7 | Facebook: Your age has been used for product planning."
-        action={action}
-      />
-    </PerfectScrollbar>
+      <h2>Live Feed</h2>
+      {data.map((message, key) => {
+        return(
+          <SnackbarContent
+            message={message}
+            style={{ backgroundColor: 'lightBlue' }} />
+        );
+      })}
     </div>
   );
 }
