@@ -11,10 +11,7 @@ import Button from "@material-ui/core/Button";
 import Image from "material-ui-image";
 import Switch from "@material-ui/core/Switch";
 import Tooltip from "@material-ui/core/Tooltip";
-import TextField from "@material-ui/core";
-import Box from "@material-ui/core";
-import Typography from "@material-ui/core";
-import Link from "@material-ui/core";
+import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles({
   table: {
@@ -117,7 +114,7 @@ function Search() {
   return <TextField align="center">{"Search for our partners..."}</TextField>;
 }
 
-export default function SimpleTable() {
+export default function ManageAccount() {
   const classes = useStyles();
 
   return (

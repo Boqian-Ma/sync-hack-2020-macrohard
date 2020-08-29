@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AccountCard, FacebookFeed, PieGraph, SearchCompanies, Sidebar } from '../components';
+import { AccountCard, FacebookFeed, ManageAccount, PieGraph, SearchCompanies, Sidebar } from '../components';
 import { Link } from '@material-ui/core';
 import './Content.css'
 
@@ -63,9 +63,10 @@ export default function Content(props) {
                 </div>}
             {show === "Accounts" &&
                 <div className="body-container">
-                    <div className="top-container">  
+                    <div className="left-container">
+                        <ManageAccount></ManageAccount>
                     </div>
-                    <div className="bottom-container">
+                    <div className="right-container">
                         <SearchCompanies></SearchCompanies>
                     </div>
                 </div>}
