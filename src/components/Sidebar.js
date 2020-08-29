@@ -22,7 +22,7 @@ export default function Sidebar({ width, height, children }) {
                 style={{
                     transform: `translatex(${xPosition}px)`,
                     width: width,
-                    minHeight: height
+                    minHeight: '100%'
                 }}
             >
                 {/* <button

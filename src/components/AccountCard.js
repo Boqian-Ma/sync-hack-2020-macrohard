@@ -10,14 +10,14 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    minWidth: 180,
   },
   media: {
-    height: 140,
+    height: '10%',
   },
 });
 
-export default function MediaCard() {
+export default function MediaCard(props) {
   const classes = useStyles();
 
   return (
@@ -25,7 +25,6 @@ export default function MediaCard() {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/Facebook.jpg"
           title="Facebook Logo"
         />
         <CardContent>
