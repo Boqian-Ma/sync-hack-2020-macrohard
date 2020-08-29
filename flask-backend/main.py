@@ -4,8 +4,11 @@ app = flask.Flask("__main__")
 
 @app.route("/")
 def my_index():
-    return flask.render_template("index.html", token="Hello flask+react")
+    pass
+    # return flask.render_template("index.html", token="Hello flask+react")
 
-app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run(port=5000, debug=True)
 
  
