@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import React, { useState } from 'react'
 import { AccountCard, FacebookFeed, LineGraph, ManageAccount, PieGraph, SearchCompanies, Sidebar } from '../components';
+=======
+import React, { useState, useEffect } from 'react';
+import { AccountCard, FacebookFeed, ManageAccount, PieGraph, SearchCompanies, Sidebar } from '../components';
+>>>>>>> adam
 import { Link } from '@material-ui/core';
 
 import { green } from '@material-ui/core/colors';
@@ -50,7 +55,16 @@ const theme = createMuiTheme({
 });
 
 export default function Content(props) {
+    useEffect (() => {
+        fetch("/home").then(response => 
+            response.json().then(data => {
+                console.log(data);
+            })
+        );
+    }, [])
+
     const [show, setShow] = useState("Dashboard")
+    
     var accounts = [
         {
             name: "Facebook",
