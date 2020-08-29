@@ -1,6 +1,5 @@
 import flask
 from json import dumps
-
 from data import *
 
 app = flask.Flask("__main__")
