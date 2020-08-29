@@ -47,13 +47,24 @@ def new_data_request():
 
 def new_account(username, account):
     # check if this user has registered this company
-    for company
 
     pass
 
 
 
-def get_frequency(username, account):
-    pass
+def get_frequency_week(username, account):
+    '''
+    get_frequency returns the number of times the account is accessed in total
+    can only call get_freq if user has this account else should be impossible
+    '''
+    # check is it exists
+    freq = {'username': username, "account": account, 'count': 0}
+
+    # check if user has account 
+    for user in DATA['users']:
+        if user['users'] == user:
+            # there exist
+
+    return freq
 
 
