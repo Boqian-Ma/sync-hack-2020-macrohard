@@ -45,14 +45,15 @@ def new_data_request():
 
     pass
 
-def new_account(username, company):
+def new_account(username, account):
     # check if this user has registered this company
-    
+    for company
+
     pass
 
 
 
-def get_frequency():
+def get_frequency(username, account):
     pass
 
 

@@ -7,7 +7,7 @@ def my_index():
     pass
     # return flask.render_template("index.html", token="Hello flask+react")
 
-@app.route("/login")
+@app.route("/login", methods)
 def login():
     pass
 
