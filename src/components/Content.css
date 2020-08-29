@@ -16,7 +16,7 @@
 .dash-container .bottom-container {
     margin: 1%;
     padding: 1%;
-    height: 30%;
+    height: 50%;
     display: flex;
     flex-direction: row;
 }
@@ -26,12 +26,25 @@
 }
 
 .acc-container .left-container {
-    width: 40%;
+    width: 80%;
 }
 
 .acc-container .right-container {
+    width: 80%;
+}
+
+.comp-container {
+    display: flex;
+}
+
+.comp-container .left-container {
     width: 40%;
 }
+
+.comp-container .right-container {
+    width: 40%;
+}
+
 
 .side-container {
     display: flex;

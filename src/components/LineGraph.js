@@ -1,5 +1,4 @@
 import React from 'react';
-import Moment from 'react-moment';
 import { Line } from 'react-chartjs-2';
 
 var moment = require('moment');
@@ -11,6 +10,7 @@ moment.updateLocale('en', {
 });
 
 export default function LineGraph(props) {
+    const freq = props.freq;
     var now = moment();
     var seven_days = moment().subtract(7, 'days');
     var memes = [moment().subtract(7, 'days'),
@@ -30,7 +30,7 @@ export default function LineGraph(props) {
         }),
         datasets: [{
             label: companies,
-            data: [100,100,100,100],
+            data: freq,
             backgroundColor: '#44CF6C',
             borderColor: '#44CF6C',
             fill: false,
@@ -49,7 +49,7 @@ export default function LineGraph(props) {
     }
 
     return (
-        <div style={{ width: '90%', height: '100%', maxHeight: '400px' }}>
+        <div style={{ width: '100%', height: '100%', maxHeight: '400px' }}>
             <h2 style={{ color: '#355593' }}>DATA USAGE</h2>
             <Line data={data} options={options} />
         </div>

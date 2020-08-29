@@ -32,6 +32,14 @@ def home():
     return flask.jsonify(package)
 
 
+@app.route("/feed")
+def feed():
+    for user in DATA['users']:
+        companies_list = user["accounts"]
+    package = {'list': companies_list, 'piechart': seven_data}
+    return flask.jsonify(package)
+
+
 @app.route("/accounts", methods=["GET"])
 def accounts():
     # dump whole list of companies 
@@ -56,6 +64,7 @@ def scompany(company):
             package[c] = companies[c]
     package['data'] = get_frequency_7day("adamma", company)
     print (package)
+    print("success")
     return flask.jsonify(package)
 
 

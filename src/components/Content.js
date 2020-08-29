@@ -37,38 +37,39 @@ export default function Content(props) {
             time: "200"
         },
         {
-            name: "instagram",
+            name: "linkedin",
             grade: "C",
             time: "164"
         },
         {
-            name: "twitter",
+            name: "google",
             grade: "B",
             time: "374"
         },
         {
-            name: "reddit",
+            name: "tiktok",
             grade: "C",
             time: "193"
         }
     ];
     const [accounts, setAccount] = useState(memes);
+    const [freq, setFreq] = useState([]);
     useEffect(() => {
-        fetch("http://127.0.0.1:5000/accounts").then(response =>
-            response.json().then(data => {
-                //console.log(data)
-                // setAccount(data.piechart);
-            })
-        )
-    });
-
-    useEffect(() => {
-        fetch("http://127.0.0.1:5000/accounts/" + company).then(response =>
-            response.json().then(data => {
-                console.log(data)
-                // setAccount(data.piechart);
-            })
-        )
+        setTimeout(() => {
+            fetch("http://127.0.0.1:5000/accounts").then(response =>
+                response.json().then(data => {
+                    //console.log(data)
+                    // setAccount(data.piechart);
+                })
+            )
+            fetch("http://127.0.0.1:5000/accounts/" + company).then(response =>
+                response.json().then(data => {
+                    console.log(data)
+                    // setAccount(data.piechart);
+                    setFreq(data.data);
+                })
+            )
+        }, 5000);
     });
 
     function changeView(tab) {
@@ -109,7 +110,7 @@ export default function Content(props) {
                     </div>
                     <div className="bottom-container">
                         <PieGraph companies={accounts}></PieGraph>
-                        <PerfectScrollbar style={{ width: '100%' }}>
+                        <PerfectScrollbar style={{ width: '100%', marginLeft: '15%'}}>
                             <FacebookFeed></FacebookFeed>
                         </PerfectScrollbar>
                     </div>
@@ -124,9 +125,9 @@ export default function Content(props) {
                     </div>
                 </div>}
             {show === "Companies" &&
-                <div className="acc-container">
+                <div className="comp-container">
                     <div className="left-container">
-                        <LineGraph companies={company}></LineGraph>
+                        <LineGraph companies={company} freq={freq}></LineGraph>
                     </div>
                     <div className="right-container">
                         {/* <PerfectScrollbar style={{ width: '100%' }}>
