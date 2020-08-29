@@ -2,7 +2,7 @@ from datetime import datetime
 
 # datetime(year, month, day, hour, minute, second, microsecond)
 
-companies = ['facebook', 'google', 'linkedin', 'tiktok', 'twitter', 'telegram', 'davidjones']
+companies = {'facebook': [] , 'google': [], 'linkedin':[] , 'tiktok':[] , 'twitter': [], 'telegram':[], 'davidjones':[]}
 
 DATA = {
     'users': [
@@ -80,6 +80,7 @@ def get_frequency_7day(username, account):
     return an list of integers of the number of data access in the past 7 days
     '''
     pass
+
 
 
 
