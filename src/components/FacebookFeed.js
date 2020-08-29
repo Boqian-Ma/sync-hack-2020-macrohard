@@ -26,7 +26,7 @@ export default function LongTextSnackbar() {
 
   return (
     <div className={classes.root}>
-      <Typography><b>Feed</b></Typography>
+            <h2>Live Feed</h2>
     <PerfectScrollbar>
       <SnackbarContent
         style={{backgroundColor: 'lightBlue'}}
@@ -35,7 +35,7 @@ export default function LongTextSnackbar() {
       />
       <SnackbarContent
         style={{backgroundColor: 'lightBlue'}}
-        message="28/7 | Facebook: Your location has been used for geographic advertisements."
+        message="28/7 | Twitter: Your location has been used for geographic advertisements."
         action={action}
       />
       <SnackbarContent
@@ -45,7 +45,7 @@ export default function LongTextSnackbar() {
       />
       <SnackbarContent
         style={{backgroundColor: 'lightBlue'}}
-        message="28/7 | Facebook: Your profile has been used for market sizing."
+        message="28/7 | Reddit: Your profile has been used for market sizing."
         action={action}
       />
       <SnackbarContent
@@ -55,7 +55,7 @@ export default function LongTextSnackbar() {
       />
       <SnackbarContent
         style={{backgroundColor: 'lightBlue'}}
-        message="27/7 | Facebook: Your age has been used for product planning."
+        message="27/7 | Instagram: Your age has been used for product planning."
         action={action}
       />
     </PerfectScrollbar>
