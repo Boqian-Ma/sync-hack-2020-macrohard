@@ -49,6 +49,11 @@ export default function Sidebar(props) {
         setValue(newValue)
     };
 
+    const changeCompany = (event, newValue) => {
+        props.changeView(newValue);
+        props.setCompany(newValue)
+    };
+
     /* const toggleMenu = () => {
         if (xPosition < 0) {
             setX(0);
@@ -80,7 +85,7 @@ export default function Sidebar(props) {
                 return (
                     <Tabs orientation="vertical"
                         variant="scrollable"
-                        onChange={handleChange}>
+                        onChange={changeCompany}>
                         <Tab label={company.name} value={company.name} />
                     </Tabs>
                 )

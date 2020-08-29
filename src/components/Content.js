@@ -51,6 +51,7 @@ const theme = createMuiTheme({
 
 export default function Content(props) {
     const [show, setShow] = useState("Dashboard")
+    const [company, setCompany] = useState("Facebook")
     
     var accounts = [
         {
@@ -85,12 +86,16 @@ export default function Content(props) {
         }
     }
 
+    function setCurrentCompany(web) {
+        setCompany(web)
+    }
+
     return (
         <ThemeProvider theme={theme}>
             <h2>Platforms</h2>
         <div className="container">
             <div className="side-container">
-                <Sidebar show={show} accounts={accounts} changeView={changeView}>
+                <Sidebar show={show} accounts={accounts} changeView={changeView} setCompany={setCompany}>
                 </Sidebar>
             </div>
             {show === "Dashboard" &&
@@ -121,7 +126,7 @@ export default function Content(props) {
             {show === "Companies" &&
                 <div className="acc-container">
                     <div className="left-container">
-                        <LineGraph companies={accounts}></LineGraph>
+                        <LineGraph companies={company}></LineGraph>
                     </div>
                     <div className="right-container">
                         {/* <PerfectScrollbar style={{ width: '100%' }}>
