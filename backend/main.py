@@ -11,10 +11,9 @@ def index():
 
 @app.route("/login", methods=["POST", "GET"])
 def login():
-    
     pass
 
-@app.route("/home", methods=["GET"])
+@app.route("/home")
 def home():
     # dump user company list 
     companies_list = []
@@ -37,7 +36,6 @@ def accounts():
         my_companies = user["accounts"]
 
     whole_list = []
-
     for key in companies:
         whole_list.append(key)
 
