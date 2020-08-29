@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Content } from './components'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <Content></Content>
     </div>
   );
 }
