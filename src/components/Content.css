@@ -1,6 +1,7 @@
 .container {
     display: flex;
     position: fixed;
+    width: 100%;
     height: 100%;
 }
 
@@ -18,6 +19,22 @@
     height: 30%;
     display: flex;
     flex-direction: row;
+}
+
+.left-container {
+    margin: 1%;
+    padding: 1%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-container {
+    margin: 1%;
+    padding: 1%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
 }
 
 .side-container {

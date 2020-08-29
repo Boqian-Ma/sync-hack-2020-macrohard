@@ -3,6 +3,7 @@ export { default as Component } from './Component';
 export { default as Content } from './Content';
 export { default as FacebookFeed } from './FacebookFeed';
 export { default as Login } from './Login';
+export { default as ManageAccount } from './ManageAccount';
 export { default as PieGraph } from './PieGraph';
 export { default as SearchBar } from './SearchBar';
 export { default as SearchCompanies } from './SearchCompanies';
