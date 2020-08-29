@@ -28,13 +28,13 @@ export default function LineGraph(props) {
 
     const options = {
         width: '50%',
-        height: '40%',
+        maxHeight: '400px',
         responsive: true,
         maintainAspectRatio: false,
     }
 
     return (
-        <div style={{ width: '60%', height: '100%' }}>
+        <div style={{ width: '90%', height: '100%', maxHeight: '400px' }}>
             <h2>Data Usage</h2>
             <Line data={data} options={options} />
         </div>
