@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
@@ -12,6 +12,8 @@ const action = (
   </Button>
 );
 
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: '100%',
@@ -23,20 +25,44 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function LongTextSnackbar() {
-  const classes = useStyles();
+  let data = ["11:10:59 | Facebook: Your profile has been used for market sizing.",
+    "11:11:00 | Facebook: Your location has been used for geographic advertisements.",
+    "11:11:02 | TikTok: Your age has been used for product advertisements.",
+    "11:11:05 | LinkedIn: Your location has been used for geographic advertisements.",
+    "11:11:07 | Instagram: Your age has been used for product advertisements.",
+    "11:11:09 | Snapchat: Your location has been used for location tracking.",
+    "11:11:10 | TikTok: Your age has been used for age-tailored advertisements.",
+    "11:11:12 | Facebook: Your location has been used for geographic advertisements.",
+    "11:11:15 | Twitter: Your phone number has been shared for advertisements.",
+    "11:11:19 | Google: Your address has been shared for demographic analysis.",
+    "11:11:15 | Amazon: Your age has been used for tailored product advertisements.",
+    "11:11:19 | Google: Your location has been used for demographic tailored product advertisements.",
+    "11:11:25 | Instagram: Your age has been used for product advertisements.",
+    "11:11:26 | TikTok: Your email has been used for promotions.",
+    "11:11:30 | LinkedIn: Your email has been used for promotions.",
+    "11:11:31 | Facebook: Your name has been used in messenger software.",
+    "11:11:34 | Facebook: Your age has been used in messenger software.",
+    "11:11:36 | Youtube: Your age has been used in censorship.",
+    "11:11:40 | Spotify: Your age has been used for advertisements.",
+    "11:11:42 | TikTok: Your age has been used for algorthm synchronization.",
 
-  const data = ["28/7 | Facebook: Your profile has been used for market sizing.",
-  "28/7 | Facebook: Your location has been used for geographic advertisements.",
-  "27/7 | TikTok: Your age has been used for product advertisements.",
-  "28/7 | Instagram: Your profile has been used for market sizing.",
-  "28/7 | Facebook: Your location has been used for geographic advertisements.",
-  "27/7 | LinkedIn: Your age has been used for product planning."]
+  ]
+  const classes = useStyles();
+  const [counter, setCounter] = useState(0);
+
+  setInterval(() => {
+    if (counter < 15) {
+      setCounter(counter + 1);
+    } else if (counter >= 15) {
+      setCounter(0);
+    }
+  }, 5000);
 
   return (
     <div className={classes.root}>
       <h2 style={{ color: '#355593' }}>LIVE FEED</h2>
-      {data.map((message, key) => {
-        return(
+      {data.slice(counter, counter + 5).map((message, key) => {
+        return (
           <SnackbarContent
             message={message}
             style={{ backgroundColor: '#355593' }} />
