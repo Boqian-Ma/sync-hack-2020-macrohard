@@ -24,7 +24,7 @@ def home():
     print(seven_data)
     package = {'list' : companies_list, 'piechart': seven_data}
     # (optional) live update of 
-    return dumps(package)
+    return flask.jsonify(package)
 
 
 @app.route("/accounts", methods=["GET"])
@@ -40,7 +40,7 @@ def accounts():
 
     package = {'list' : whole_list, 'my_companies': my_companies}
     #print(dumps(package))
-    return dumps(package)
+    return flask.jsonify(package)
 
 @app.route("/accounts/<company>", methods=["GET"])
 def scompany(company):
@@ -51,7 +51,7 @@ def scompany(company):
             package[c] = companies[c]
     package['data'] = get_frequency_7day("adamma", company)
     print (package)
-    return dumps(package)
+    return flask.jsonify(package)
 
 
 if __name__ == "__main__":
