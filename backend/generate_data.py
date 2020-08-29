@@ -1,5 +1,5 @@
 import random 
-import datetime as datetime
+from datetime import datetime
 # {'time': datetime(2020, 1, 1, 12, 14, 34), 'username': 'adammbq', 'company': 'facebook', 'note': "advertisement"},
 
 # 29/08/2020 datetime(2020, 8, 22 - 29, 0, 0, 0)
@@ -17,7 +17,6 @@ def random_note():
 
 def random_data(start, end, num):
     data = []
-    
     for i in range(num):
         company = random_company()
         note = random_note()
@@ -25,17 +24,17 @@ def random_data(start, end, num):
         hour = random.randint(0,23)
         min = random.randint(0, 59)
         sec = random.randint(0,59)
-        new = {'time': datetime.datetime(2020, 8, day, hour, min, sec), 'username': 'adammbq', 'company': company, 'note': note}
+        new = {'time': datetime(2020, 8, day, hour, min, sec), 'username': 'adammbq', 'company': company, 'note': note}
         data.append(new)
-    
-    return sort_data(data)
+    sort_data(data)
 
 def sort_data(data):
     '''
     sort data by datetime
     '''
     data.sort(key = lambda x:x['time']) 
-    return data
+    for i in range(len(data)):
+        print(f"{data[i]},")
 
 if __name__ == "__main__":
-    print(random_data(22,24,100))
+    random_data(22,29,100)
