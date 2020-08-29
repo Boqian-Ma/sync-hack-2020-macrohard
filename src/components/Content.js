@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { AccountCard, FacebookFeed, ManageAccount, PieGraph, SearchCompanies, Sidebar } from '../components';
 import { Link } from '@material-ui/core';
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import 'react-perfect-scrollbar/dist/css/styles.css';
 import './Content.css'
 
 export default function Content(props) {
@@ -29,26 +31,21 @@ export default function Content(props) {
     ];
 
     function changeView(tab) {
-        setShow(tab);
+        if (tab === 0) {
+            setShow("Dashboard");
+        } else if (tab === 1) {
+            setShow("Accounts");
+        }
     }
 
     return (
         <div className="container">
             <div className="side-container">
-                <Sidebar width={300} height={"100%"}>
-                    <h2><Link onClick={() => changeView("Dashboard")}>Dashboard</Link></h2>
-                    <h2><Link onClick={() => changeView("Accounts")}>Accounts</Link></h2>
-                    {accounts.map((company, idx) => {
-                        return(
-                            <div>
-                                <a>{company.name}</a>
-                            </div>
-                        )
-                    })}
+                <Sidebar show={show} accounts={accounts} changeView={changeView}>
                 </Sidebar>
             </div>
             {show === "Dashboard" &&
-                <div className="body-container">
+                <div className="dash-container">
                     <div className="top-container">
                         {accounts.map((company, idx) => {
                             return(
@@ -58,11 +55,13 @@ export default function Content(props) {
                     </div>
                     <div className="bottom-container">
                         <PieGraph companies={accounts}></PieGraph>
-                        <FacebookFeed></FacebookFeed>
+                        <PerfectScrollbar style={{ width: '100%' }}>
+                            <FacebookFeed></FacebookFeed>
+                        </PerfectScrollbar>
                     </div>
                 </div>}
             {show === "Accounts" &&
-                <div className="body-container">
+                <div className="acc-container">
                     <div className="left-container">
                         <ManageAccount></ManageAccount>
                     </div>
