@@ -12,8 +12,11 @@ def test_main():
 def test_accounts():
     accounts()
 
+def test_scompany(company):
+    scompany(company)
 
 if __name__ == "__main__":
     #test_adduser()
     #test_addcompany()
-    test_accounts()
+    #test_accounts()
+    test_scompany("facebook")

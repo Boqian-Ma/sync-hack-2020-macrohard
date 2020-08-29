@@ -35,17 +35,26 @@ def accounts():
     my_companies = []
     for user in DATA['users']:
         my_companies = user["accounts"]
-    whole_list = companies
+
+    whole_list = []
+
+    for key in companies:
+        whole_list.append(key)
+
     package = {'list' : whole_list, 'my_companies': my_companies}
-    print(package)
+    #print(dumps(package))
     return dumps(package)
 
 @app.route("/accounts/<company>", methods=["GET"])
-def company(company):
-    # dump company data usage
-
-    # dump indivisual comoany past 7 days data usage
-    pass
+def scompany(company):
+    # dump company data usage types
+    package = {}
+    for c in companies:
+        if c == company:
+            package[c] = companies[c]
+    package['data'] = get_frequency_7day("adamma", company)
+    print (package)
+    return dumps(package)
 
 
 if __name__ == "__main__":
