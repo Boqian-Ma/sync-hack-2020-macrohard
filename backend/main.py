@@ -17,7 +17,7 @@ def login():
 @app.route("/home", methods=[GET])
 def home():
     # dump user company list 
-    companies
+    companies = DATA['users'] 
     # dump past 7 day data for piechart
 
     # (optional) live update of 
