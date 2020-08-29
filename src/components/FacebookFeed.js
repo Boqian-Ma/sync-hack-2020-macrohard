@@ -51,6 +51,7 @@ export default function LongTextSnackbar() {
   const [counter, setCounter] = useState(0);
   const [data, setData] = useState(datea);
 
+  
   window.setInterval(() => {
       if (counter < 10) {
         setData(data.splice(0, 0, backUp[counter]));

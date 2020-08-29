@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -35,14 +35,31 @@ const useStyles = makeStyles({
   },
 });
 
+
+var counter=0;
+
 export default function MediaCard(props) {
+  
+  var string;
   const classes = useStyles();
   const company = props.company;
+  if (counter==9) {
+    string='./10.png'
+  } 
+  if (counter ==11) {
+    string='./12.png'
+  }
+  if (counter ==13) {
+    string='./14.png'
+  }
+  if (counter ==15) {
+    string='./16.png'
+  }
+  counter=counter+1;
 
   return (
     <div>
     <ThemeProvider theme={theme}>
-    
     <Card className={classes.root}>
       {/* <CardActionArea> */}
         <CardMedia
@@ -50,6 +67,7 @@ export default function MediaCard(props) {
           title="Facebook Logo"
         />
         <CardContent>
+        <img className = 'platform-logo' src={string} style={{width: 50, height: 50}}></img>
           <Typography gutterBottom variant="h5" component="h2">
             {company.name}
           </Typography>
