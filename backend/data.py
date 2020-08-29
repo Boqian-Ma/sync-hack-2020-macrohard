@@ -67,17 +67,19 @@ def get_frequency_week(username, account):
     # check is it exists
     freq = {'username': username, "account": account, 'count': 0}
     # check if user has account 
-
     # find current date
-    today = datetime.date
+    today = datetime.date()
     for user in DATA['users']:
         if user['users'] == user:
             # there exist this user, now work on data and 
-
-
-
+            pass
     return freq
 
-def get_frequency_day(username, account):
+def get_frequency_7day(username, account):
+    '''
+    return an list of integers of the number of data access in the past 7 days
+    '''
     pass
+
+
 
