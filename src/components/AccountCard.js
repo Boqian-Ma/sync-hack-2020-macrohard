@@ -43,20 +43,8 @@ export default function MediaCard(props) {
   
   const classes = useStyles();
   const company = props.company;
-  if (logoCount==9) {
-    string='./10.png'
-    
-  } 
-  if (logoCount ==11) {
-    string='./12.png'
-  }
-  if (logoCount ==13) {
-    string='./14.png'
-  }
-  if (logoCount ==15) {
-    string='./16.png'
-  }
-  logoCount=counter+1;
+  const companyImg = `${company.name}.png`;
+  //console.log(company);
 
   return (
     <div>
@@ -68,8 +56,7 @@ export default function MediaCard(props) {
           title="Facebook Logo"
         />
         <CardContent>
-        <img className = 'platform-logo' src={string} style={{width: 50, height: 50}}></img>
-        {counter}
+        <img className = 'platform-logo' src={companyImg} style={{width: 50, height: 50}}></img>
           <Typography gutterBottom variant="h5" component="h2">
             {company.name}
           </Typography>
