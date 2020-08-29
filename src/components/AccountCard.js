@@ -19,31 +19,32 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
+  const company = props.company;
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
+      {/* <CardActionArea> */}
         <CardMedia
           className={classes.media}
           title="Facebook Logo"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Facebook
+            {company.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Grade: D
+            Grade: {company.grade}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Usage: 120 times in 24 hours
+            Usage: {company.time} times in 24 hours
           </Typography>
         </CardContent>
-      </CardActionArea>
+      {/* </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
           Learn More
         </Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }
