@@ -4,10 +4,9 @@
     flex-direction: column;
     border-right: 1px solid;
     border-radius: 0;
-    border-color: rgba(64, 194, 133, 0.693);
-    background-color: rgb(255, 255, 255);
+    border-color: rgba(49, 49, 49, 0.693);
+    background-color: rgb(49, 49, 49);
     transition: 0.8s ease;
-    background-image: linear-gradient(rgb(49, 190, 190), rgb(59, 59, 214));
 }
 
 .toggle-menu {
