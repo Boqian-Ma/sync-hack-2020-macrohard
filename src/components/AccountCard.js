@@ -36,11 +36,11 @@ const useStyles = makeStyles({
 });
 
 
-var counter=0;
-
+var logoCount=0;
+var string;
 export default function MediaCard(props) {
   
-  var string;
+  
   const classes = useStyles();
   const company = props.company;
   const companyImg = `${company.name}.png`;
