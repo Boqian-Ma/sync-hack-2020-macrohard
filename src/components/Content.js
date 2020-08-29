@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
 import { AccountCard, FacebookFeed, ManageAccount, PieGraph, SearchCompanies, Sidebar } from '../components';
 import { Link } from '@material-ui/core';
-import { createMuiTheme }  from '@material-ui/core/styles'
-import { purple } from '@material-ui/core/colors';
-import { green } from '@material-ui/core/colors';
-import { ThemeProvider } from '@material-ui/core/styles';
-import './Content.css'
 
+import { green } from '@material-ui/core/colors';
+
+import './Content.css'
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import 'react-perfect-scrollbar/dist/css/styles.css';
+
+
+import { ThemeProvider } from '@material-ui/core/styles';
 import RalewayWoff2 from './raleway-v17-latin-regular.woff2';
+import { createMuiTheme }  from '@material-ui/core/styles'
+import { lightBlue } from '@material-ui/core/colors';
 
 const raleway = {
   fontFamily: 'Raleway',
@@ -26,10 +31,10 @@ const raleway = {
 const theme = createMuiTheme({
     palette: {
         primary: {
-          main: purple[500],
+          main: lightBlue[500],
         },
         secondary: {
-          main: green[500],
+          main: lightBlue[500],
         },
     },  
   typography: {
@@ -70,27 +75,23 @@ export default function Content(props) {
     ];
 
     function changeView(tab) {
-        setShow(tab);
+        if (tab === 0) {
+            setShow("Dashboard");
+        } else if (tab === 1) {
+            setShow("Accounts");
+        }
     }
 
     return (
         <ThemeProvider theme={theme}>
+            <h2>Platforms</h2>
         <div className="container">
             <div className="side-container">
-                <Sidebar width={300} height={"100%"}>
-                    <h2><Link onClick={() => changeView("Dashboard")}>Dashboard</Link></h2>
-                    <h2><Link onClick={() => changeView("Accounts")}>Accounts</Link></h2>
-                    {accounts.map((company, idx) => {
-                        return(
-                            <div>
-                                <a>{company.name}</a>
-                            </div>
-                        )
-                    })}
+                <Sidebar show={show} accounts={accounts} changeView={changeView}>
                 </Sidebar>
             </div>
             {show === "Dashboard" &&
-                <div className="body-container">
+                <div className="dash-container">
                     <div className="top-container">
                         {accounts.map((company, idx) => {
                             return(
@@ -100,11 +101,13 @@ export default function Content(props) {
                     </div>
                     <div className="bottom-container">
                         <PieGraph companies={accounts}></PieGraph>
-                        <FacebookFeed></FacebookFeed>
+                        <PerfectScrollbar style={{ width: '100%' }}>
+                            <FacebookFeed></FacebookFeed>
+                        </PerfectScrollbar>
                     </div>
                 </div>}
             {show === "Accounts" &&
-                <div className="body-container">
+                <div className="acc-container">
                     <div className="left-container">
                         <ManageAccount></ManageAccount>
                     </div>
