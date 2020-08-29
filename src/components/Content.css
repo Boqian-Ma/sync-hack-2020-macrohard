@@ -26,11 +26,11 @@
 }
 
 .acc-container .left-container {
-    width: 50%;
+    width: 40%;
 }
 
 .acc-container .right-container {
-    width: 50%;
+    width: 40%;
 }
 
 .side-container {
@@ -40,4 +40,9 @@
 
 .item {
     display: flex;
+}
+
+.logo {
+    width: 15%;
+    length: 15%;
 }

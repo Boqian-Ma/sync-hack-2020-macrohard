@@ -22,13 +22,13 @@ def home():
     companies_list = []
     for user in DATA['users']:
         companies_list = user["accounts"]
-    print(companies_list)
+    # print(companies_list)
     # dump past 7 day data for piechart
     seven_data = get_frequency_week('adamma')
-    print(seven_data)
+    # print(seven_data)
     package = {'list' : companies_list, 'piechart': seven_data}
     # (optional) live update of 
-    print("hihihihihihihihihi")
+    # print("hihihihihihihihihi")
     return flask.jsonify(package)
 
 

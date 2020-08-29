@@ -34,12 +34,12 @@ export default function LongTextSnackbar() {
 
   return (
     <div className={classes.root}>
-      <h2>Live Feed</h2>
+      <h2 style={{ color: '#355593' }}>LIVE FEED</h2>
       {data.map((message, key) => {
         return(
           <SnackbarContent
             message={message}
-            style={{ backgroundColor: 'lightBlue' }} />
+            style={{ backgroundColor: '#355593' }} />
         );
       })}
     </div>

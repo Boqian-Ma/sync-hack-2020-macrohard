@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
+import { CardMedia, Link, Card, CardHeader, CardActionArea, CardActions } from '@material-ui/core';
+//import { CardText } from 'reactstrap';
 import { AccountCard, FacebookFeed, LineGraph, ManageAccount, PieGraph, SearchCompanies, SharedPersonalData, Sidebar } from '../components';
-import { Link } from '@material-ui/core';
 
 import { green } from '@material-ui/core/colors';
 
@@ -10,23 +11,10 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 
 
 import { ThemeProvider } from '@material-ui/core/styles';
-import RalewayWoff2 from './raleway-v17-latin-regular.woff2';
 import { createMuiTheme }  from '@material-ui/core/styles'
 import { lightBlue } from '@material-ui/core/colors';
+import Button from '@material-ui/core/Button';
 
-const raleway = {
-  fontFamily: 'Raleway',
-  fontStyle: 'normal',
-  fontDisplay: 'swap',
-  fontWeight: 400,
-  src: `
-    local('Raleway'),
-    local('Raleway-Regular'),
-    url(${RalewayWoff2}) format('woff2')
-  `,
-  unicodeRange:
-    'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF',
-};
 
 const theme = createMuiTheme({
     palette: {
@@ -37,44 +25,51 @@ const theme = createMuiTheme({
           main: lightBlue[500],
         },
     },  
-  typography: {
-    fontFamily: 'Raleway, Arial',
-  },
-  overrides: {
-    MuiCssBaseline: {
-      '@global': {
-        '@font-face': [raleway],
-      },
-    },
-  },
 });
 
 export default function Content(props) {
     const [show, setShow] = useState("Dashboard")
-    const [company, setCompany] = useState("Facebook")
-    
-    var accounts = [
+    const [company, setCompany] = useState("facebook")
+    var memes = [
         {
-            name: "Facebook",
+            name: "facebook",
             grade: "D",
             time: "200"
         },
         {
-            name: "Instagram",
+            name: "instagram",
             grade: "C",
             time: "164"
         },
         {
-            name: "Twitter",
+            name: "twitter",
             grade: "B",
             time: "374"
         },
         {
-            name: "Reddit",
+            name: "reddit",
             grade: "C",
             time: "193"
         }
     ];
+    const [accounts, setAccount] = useState(memes);
+    useEffect(() => {
+        fetch("http://127.0.0.1:5000/accounts").then(response =>
+            response.json().then(data => {
+                //console.log(data)
+                // setAccount(data.piechart);
+            })
+        )
+    });
+
+    useEffect(() => {
+        fetch("http://127.0.0.1:5000/accounts/" + company).then(response =>
+            response.json().then(data => {
+                console.log(data)
+                // setAccount(data.piechart);
+            })
+        )
+    });
 
     function changeView(tab) {
         if (tab === 0) {
@@ -92,7 +87,12 @@ export default function Content(props) {
 
     return (
         <ThemeProvider theme={theme}>
-            <h2>Platforms</h2>
+
+        <Card>
+        <img align='centre' className = 'logo' src='./verticallogo.png'></img>   
+        
+
+  </Card>
         <div className="container">
             <div className="side-container">
                 <Sidebar show={show} accounts={accounts} changeView={changeView} setCompany={setCompany}>

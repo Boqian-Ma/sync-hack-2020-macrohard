@@ -11,13 +11,16 @@
     "axios": "^0.19.2",
     "chart.js": "^2.9.3",
     "material-ui-image": "^3.2.3",
+    "moment": "^2.27.0",
     "qrcode.react": "^1.0.0",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.10.0",
     "react-dom": "^16.13.1",
+    "react-moment": "^0.9.7",
     "react-perfect-scrollbar": "^1.5.8",
     "react-qr-scanner": "0.0.9",
     "react-scripts": "^3.4.3",
+    "reactstrap": "^8.5.1",
     "yarn": "^1.22.5"
   },
   "scripts": {

@@ -9,12 +9,6 @@ function App() {
     setLogin(!login);
   }
 
-  fetch("http://127.0.0.1:5000/home").then(response => 
-      response.json().then(data => {
-        console.log(data);
-      })
-  )
-
   return (
     <div className="App">
       <Content></Content>

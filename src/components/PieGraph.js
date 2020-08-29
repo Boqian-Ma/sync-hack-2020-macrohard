@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 
 export default function PieGraph(props) {
-    const companies = props.companies;
+    const [companies, setCompanies] = useState({});
+    useEffect(() => {
+        fetch("http://127.0.0.1:5000/home").then(response =>
+            response.json().then(data => {
+                setCompanies(data.piechart);
+            })
+        )
+    });
+
     const data = {
-        labels: companies.map((company, idx) => {
-                return company.name;
+        labels: Object.keys(companies).map((company, idx) => {
+                return company;
         }),
         datasets: [{
-            data: companies.map((company, idx) => {
-                return company.time;
+            data: Object.values(companies).map((time, idx) => {
+                return time;
             }),
             backgroundColor: [
                 '#FF6384',
@@ -35,7 +43,7 @@ export default function PieGraph(props) {
 
     return (
         <div style={{ width: '60%', height: '100%' }}>
-            <h2>Data Usage</h2>
+            <h2 style={{ color: '#355593' }}>DATA USAGE</h2>
             <Doughnut data={data} options={options}/>
         </div>
     );
