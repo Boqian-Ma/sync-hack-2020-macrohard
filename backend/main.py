@@ -7,7 +7,13 @@ def my_index():
     pass
     # return flask.render_template("index.html", token="Hello flask+react")
 
+@app.route("/login")
+def login():
+    pass
 
+@app.route("/accounts")
+def accounts():
+    pass
 
 
 if __name__ == "__main__":
