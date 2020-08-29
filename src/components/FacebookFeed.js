@@ -27,10 +27,10 @@ export default function LongTextSnackbar() {
 
   const data = ["28/7 | Facebook: Your profile has been used for market sizing.",
   "28/7 | Facebook: Your location has been used for geographic advertisements.",
-  "27/7 | Facebook: Your age has been used for product advertisements.",
-  "28/7 | Facebook: Your profile has been used for market sizing.",
+  "27/7 | TikTok: Your age has been used for product advertisements.",
+  "28/7 | Instagram: Your profile has been used for market sizing.",
   "28/7 | Facebook: Your location has been used for geographic advertisements.",
-  "27/7 | Facebook: Your age has been used for product planning."]
+  "27/7 | LinkedIn: Your age has been used for product planning."]
 
   return (
     <div className={classes.root}>
