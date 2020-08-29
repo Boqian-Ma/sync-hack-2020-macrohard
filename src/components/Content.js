@@ -57,7 +57,7 @@ export default function Content(props) {
                         })}
                     </div>
                     <div className="bottom-container">
-                        <PieGraph></PieGraph>
+                        <PieGraph companies={accounts}></PieGraph>
                         <FacebookFeed></FacebookFeed>
                     </div>
                 </div>}
