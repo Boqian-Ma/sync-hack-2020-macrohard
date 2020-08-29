@@ -24,6 +24,7 @@ def home():
     print(seven_data)
     package = {'list' : companies_list, 'piechart': seven_data}
     # (optional) live update of 
+    
     return flask.jsonify(package)
 
 

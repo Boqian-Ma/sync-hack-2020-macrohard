@@ -50,6 +50,7 @@ const theme = createMuiTheme({
 });
 
 export default function Content(props) {
+    
     useEffect (() => {
         fetch("/home").then(response => 
             response.json().then(data => {
@@ -58,6 +59,8 @@ export default function Content(props) {
         );
     }, [])
 
+
+    
     const [show, setShow] = useState("Dashboard")
     
     var accounts = [
