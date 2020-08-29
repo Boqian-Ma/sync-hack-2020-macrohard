@@ -47,13 +47,22 @@ def new_data_request():
 
 def new_account(username, account):
     # check if this user has registered this company
-    for company
-
-    pass
+    if account not in companies:
+        raise ValueError("company does not exist")
+    for user in DATA['users']:
+        if user['username'] == username:
+            for company in user['accounts']:
+                print(company)
+                if company == account:
+                    raise ValueError("account already registered")
+            user['accounts'].append(account)
+    return DATA
 
 
 
 def get_frequency(username, account):
     pass
 
+def get_frequency_day(username, account):
+    
 
