@@ -42,7 +42,6 @@ def new_data_request():
     '''
     create new data request
     '''
-
     pass
 
 def new_account(username, account):
@@ -59,22 +58,26 @@ def new_account(username, account):
     return DATA
 
 
-
 def get_frequency_week(username, account):
     '''
     get_frequency returns the number of times the account is accessed in total
     can only call get_freq if user has this account else should be impossible
+    return an object
     '''
     # check is it exists
     freq = {'username': username, "account": account, 'count': 0}
-
     # check if user has account 
+
+    # find current date
+    today = datetime.date
     for user in DATA['users']:
         if user['users'] == user:
-            # there exist
+            # there exist this user, now work on data and 
+
+
 
     return freq
 
 def get_frequency_day(username, account):
-
+    pass
 
