@@ -1,8 +1,12 @@
 import flask
+from flask_cors import CORS, cross_origin
 from json import dumps
 from data import *
 
 app = flask.Flask("__main__")
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 @app.route("/")
 def index():
     pass
@@ -12,7 +16,7 @@ def index():
 def login():
     pass
 
-@app.route("/home")
+@app.route("/home", methods=["GET"])
 def home():
     # dump user company list 
     companies_list = []
@@ -24,6 +28,7 @@ def home():
     print(seven_data)
     package = {'list' : companies_list, 'piechart': seven_data}
     # (optional) live update of 
+    print("hihihihihihihihihi")
     return flask.jsonify(package)
 
 
