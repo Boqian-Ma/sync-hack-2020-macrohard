@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { CardMedia, Link, Card, CardHeader, CardActionArea, CardActions } from '@material-ui/core';
 //import { CardText } from 'reactstrap';
 import { AccountCard, FacebookFeed, LineGraph, ManageAccount, PieGraph, SearchCompanies, SharedPersonalData, Sidebar } from '../components';
-import { Link } from '@material-ui/core';
 
 import { green } from '@material-ui/core/colors';
 
