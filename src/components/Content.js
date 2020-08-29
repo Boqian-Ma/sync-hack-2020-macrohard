@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { AccountCard, FacebookFeed, ManageAccount, PieGraph, SearchCompanies, Sidebar } from '../components';
 import { CardMedia, Link, Card, CardHeader, CardActionArea, CardActions } from '@material-ui/core';
 //import { CardText } from 'reactstrap';
+import { AccountCard, FacebookFeed, LineGraph, ManageAccount, PieGraph, SearchCompanies, SharedPersonalData, Sidebar } from '../components';
+import { Link } from '@material-ui/core';
 
 import { green } from '@material-ui/core/colors';
 
@@ -29,6 +30,7 @@ const theme = createMuiTheme({
 
 export default function Content(props) {
     const [show, setShow] = useState("Dashboard")
+    
     var accounts = [
         {
             name: "Facebook",
@@ -57,6 +59,8 @@ export default function Content(props) {
             setShow("Dashboard");
         } else if (tab === 1) {
             setShow("Accounts");
+        } else {
+            setShow("Companies");
         }
     }
 
@@ -98,6 +102,18 @@ export default function Content(props) {
                     </div>
                     <div className="right-container">
                         <SearchCompanies></SearchCompanies>
+                    </div>
+                </div>}
+            {show === "Companies" &&
+                <div className="acc-container">
+                    <div className="left-container">
+                        <LineGraph companies={accounts}></LineGraph>
+                    </div>
+                    <div className="right-container">
+                        {/* <PerfectScrollbar style={{ width: '100%' }}>
+                            <FacebookFeed></FacebookFeed>
+                    </PerfectScrollbar> */}
+                    <SharedPersonalData></SharedPersonalData>
                     </div>
                 </div>}
         </div>

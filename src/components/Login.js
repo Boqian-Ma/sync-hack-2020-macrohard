@@ -49,18 +49,14 @@ export default function Login(props) {
 
   function updateUser(e) {
     setUser(e.target.value);
-    console.log("user " + username);
   }
 
   function updatePass(e) {
     setPass(e.target.value);
-    console.log("pass " + password);
   }
 
   function signIn() {
-    console.log("memez");
     if (checkSuccess(username, password)) {
-      console.log("memes");
       props.sign()
     }
   }

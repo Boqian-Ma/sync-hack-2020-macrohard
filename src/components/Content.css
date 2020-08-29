@@ -21,20 +21,16 @@
     flex-direction: row;
 }
 
-.acc-container .left-container {
-    margin: 1%;
-    padding: 1%;
-    width: 100%;
+.acc-container {
     display: flex;
-    flex-direction: column;
+}
+
+.acc-container .left-container {
+    width: 50%;
 }
 
 .acc-container .right-container {
-    margin: 1%;
-    padding: 1%;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
+    width: 50%;
 }
 
 .side-container {
