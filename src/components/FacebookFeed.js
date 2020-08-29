@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
 
@@ -30,10 +31,9 @@ export default function LongTextSnackbar() {
         return(
           <SnackbarContent
             message={message}
-          />
+            style={{ backgroundColor: 'lightBlue' }} />
         );
       })}
-    
     </div>
   );
 }
