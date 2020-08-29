@@ -71,7 +71,7 @@ export default function Content(props) {
                     setFreq(data.data);
                 })
             )
-        }, 5000);
+        }, 1500);
     });
 
     function changeView(tab) {
