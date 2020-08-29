@@ -18,6 +18,7 @@
     "react-perfect-scrollbar": "^1.5.8",
     "react-qr-scanner": "0.0.9",
     "react-scripts": "^3.4.3",
+    "reactstrap": "^8.5.1",
     "yarn": "^1.22.5"
   },
   "scripts": {

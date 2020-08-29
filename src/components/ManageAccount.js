@@ -12,7 +12,22 @@ import Image from "material-ui-image";
 import Switch from "@material-ui/core/Switch";
 import Tooltip from "@material-ui/core/Tooltip";
 import TextField from "@material-ui/core/TextField";
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import { blue } from '@material-ui/core/colors';
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      // Purple and green play nicely together.
+      main: blue[500],
+    },
+    secondary: {
+      // This is green.A700 as hex.
+      main: '#11cb5f',
+    },
+  },
+});
 const useStyles = makeStyles({
   table: {
     minWidth: 650
@@ -102,7 +117,7 @@ const rows = [
       </Button>
     </Tooltip>,
     <Switch
-      color="primary"
+      color='lightBlue'
       name="checkedB"
       inputProps={{ "aria-label": "primary checkbox" }}
     />,
@@ -110,16 +125,16 @@ const rows = [
   )
 ];
 
-function Search() {
-  return <TextField align="center">{"Search for our partners..."}</TextField>;
-}
+
 
 export default function ManageAccount() {
   const classes = useStyles();
 
   return (
+    
     <form className={classes.root} noValidate autoComplete="off">
       <div>
+      <ThemeProvider theme={theme}>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
@@ -145,7 +160,9 @@ export default function ManageAccount() {
             </TableBody>
           </Table>
         </TableContainer>
+        </ThemeProvider>
       </div>
     </form>
+   
   );
 }

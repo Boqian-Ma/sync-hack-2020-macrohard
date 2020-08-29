@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Raleway';
+    src: local('Raleway'), url(./fonts/raleway-v17-latin-regular.ttf) format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: local('@'), url(./fonts/Raleway-Bold.ttf) format('truetype');
+    font-weight: bold;
+}

@@ -18,7 +18,7 @@ export default function SearchCompanies(props) {
 
     return (
         <div>
-            <SearchBar label="Search Companies" onChange={handleChange} />
+            <SearchBar label="Search for our partners..." onChange={handleChange} />
             <div>
                 {companyList.map((company, idx) => {
                     return(

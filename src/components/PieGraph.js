@@ -35,7 +35,7 @@ export default function PieGraph(props) {
 
     return (
         <div style={{ width: '60%', height: '100%' }}>
-            <h2>Data Usage</h2>
+            <h2 style={{ color: '#355593' }}>DATA USAGE</h2>
             <Doughnut data={data} options={options}/>
         </div>
     );

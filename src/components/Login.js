@@ -23,14 +23,17 @@ const useStyles = makeStyles((theme) => ({
 
 function Copyright() {
   return (
+    <div>
+    
+
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
+      </Link>{"watchdogapp.io  "}
       {new Date().getFullYear()}
       {"."}
     </Typography>
+    </div>
   );
 }
 
@@ -66,6 +69,8 @@ export default function Login(props) {
     <div className="login-container">
       <form className={classes.root} noValidate autoComplete="off">
         <div className="login-items">
+          <img className = 'login-logo' src='./watchdoglogo.png'></img>
+          <h2 style={{ color: 'navy' }}></h2>
           <TextField
             variant="outlined"
             margin="normal"

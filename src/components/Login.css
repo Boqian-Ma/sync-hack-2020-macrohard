@@ -15,3 +15,8 @@
 .login-items {
     display: inherit;
 }
+
+.login-logo {
+    width: 50%;
+    height: 50%;
+}

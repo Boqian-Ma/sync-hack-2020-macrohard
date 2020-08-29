@@ -45,3 +45,8 @@
 .item {
     display: flex;
 }
+
+.logo {
+    width: 15%;
+    length: 15%;
+}
