@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import React, { useState } from 'react'
 import { AccountCard, FacebookFeed, LineGraph, ManageAccount, PieGraph, SearchCompanies, Sidebar } from '../components';
-=======
-import React, { useState, useEffect } from 'react';
-import { AccountCard, FacebookFeed, ManageAccount, PieGraph, SearchCompanies, Sidebar } from '../components';
->>>>>>> dae16c1c1ee7a02d3e61d6a1b923f8a6f13557dc
 import { Link } from '@material-ui/core';
 
 import { green } from '@material-ui/core/colors';
