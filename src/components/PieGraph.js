@@ -9,7 +9,7 @@ export default function PieGraph(props) {
                 response.json().then(data => {
                     setCompanies(data.piechart);
                 }))
-        }, 2500);
+        }, 1000);
     });
 
     const data = {

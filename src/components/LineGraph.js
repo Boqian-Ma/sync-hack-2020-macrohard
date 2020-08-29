@@ -49,7 +49,7 @@ export default function LineGraph(props) {
     }
 
     return (
-        <div style={{ width: '100%', height: '100%', maxHeight: '400px' }}>
+        <div style={{ width: '90%', height: '100%', maxHeight: '400px' }}>
             <h2 style={{ color: '#355593' }}>DATA USAGE</h2>
             <Line data={data} options={options} />
         </div>
