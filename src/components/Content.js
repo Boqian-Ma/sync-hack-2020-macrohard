@@ -1,9 +1,53 @@
 import React, { useState } from 'react'
 import { AccountCard, FacebookFeed, LineGraph, ManageAccount, PieGraph, SearchCompanies, Sidebar } from '../components';
 import { Link } from '@material-ui/core';
+
+import { green } from '@material-ui/core/colors';
+
+import './Content.css'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import 'react-perfect-scrollbar/dist/css/styles.css';
-import './Content.css'
+
+
+import { ThemeProvider } from '@material-ui/core/styles';
+import RalewayWoff2 from './raleway-v17-latin-regular.woff2';
+import { createMuiTheme }  from '@material-ui/core/styles'
+import { lightBlue } from '@material-ui/core/colors';
+
+const raleway = {
+  fontFamily: 'Raleway',
+  fontStyle: 'normal',
+  fontDisplay: 'swap',
+  fontWeight: 400,
+  src: `
+    local('Raleway'),
+    local('Raleway-Regular'),
+    url(${RalewayWoff2}) format('woff2')
+  `,
+  unicodeRange:
+    'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF',
+};
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+          main: lightBlue[500],
+        },
+        secondary: {
+          main: lightBlue[500],
+        },
+    },  
+  typography: {
+    fontFamily: 'Raleway, Arial',
+  },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        '@font-face': [raleway],
+      },
+    },
+  },
+});
 
 export default function Content(props) {
     const [show, setShow] = useState("Dashboard")
@@ -41,6 +85,8 @@ export default function Content(props) {
     }
 
     return (
+        <ThemeProvider theme={theme}>
+            <h2>Platforms</h2>
         <div className="container">
             <div className="side-container">
                 <Sidebar show={show} accounts={accounts} changeView={changeView}>
@@ -83,6 +129,7 @@ export default function Content(props) {
                     </div>
                 </div>}
         </div>
+        </ThemeProvider>
     )
 }
 
