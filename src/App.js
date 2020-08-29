@@ -10,7 +10,7 @@ function App() {
   }
   return (
     <div className="App">
-      {login && <Content></Content>}
+      <Content></Content>
       { !login &&
       <div className="overlay">
           <Login sign={toggleOverlay} ></Login>

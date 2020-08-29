@@ -24,14 +24,14 @@ export default function PieGraph() {
     };
 
     const options = {
-        width: '500px',
-        height: '50px',
+        width: '50%',
+        height: '40%',
         responsive: true,
         maintainAspectRatio: false,
     }
 
     return (
-        <div style={{ width: '90%', height: '100%' }}>
+        <div style={{ width: '60%', height: '100%' }}>
             <h2>Doughnut Example</h2>
             <Doughnut data={data} options={options}/>
         </div>
