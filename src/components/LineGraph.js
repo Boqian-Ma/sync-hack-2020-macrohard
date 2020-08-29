@@ -27,6 +27,7 @@ export default function LineGraph(props) {
     };
 
     const options = {
+        color: '#355593',
         width: '50%',
         maxHeight: '400px',
         responsive: true,
@@ -34,8 +35,8 @@ export default function LineGraph(props) {
     }
 
     return (
-        <div style={{ width: '90%', height: '100%', maxHeight: '400px' }}>
-            <h2>Data Usage</h2>
+        <div style={{ color: '#355593', width: '90%', height: '100%', maxHeight: '400px' }}>
+            <h2>DATA USAGE</h2>
             <Line data={data} options={options} />
         </div>
     );
