@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # datetime(year, month, day, hour, minute, second, microsecond)
 
@@ -57,30 +57,48 @@ def new_account(username, account):
             user['accounts'].append(account)
     return DATA
 
+def get_user(username):
+    for user in DATA['users']:
+        if user['username'] == username:
+            return user
+    return None
 
-def get_frequency_week(username, account):
+def get_frequency_week(username):
     '''
     get_frequency returns the number of times the account is accessed in total
     can only call get_freq if user has this account else should be impossible
     return an object
+
+    [facebook: no of accesses]
     '''
     # check is it exists
-    freq = {'username': username, "account": account, 'count': 0}
+    #freq = {'username': username, "account": account, 'count': 0}
     # check if user has account 
     # find current date
-    today = datetime.date()
-    for user in DATA['users']:
-        if user['users'] == user:
-            # there exist this user, now work on data and 
-            pass
+    freq = {}
+    now = datetime.date()
+    last_week = now - timedelta(days=7)
+    for data in DATA['data']:
+        if last_week <= data['time'] <= now:
+            if data['company'] not in freq:
+                freq[data['company']] = 1
+            else:
+                freq[data['company']] += 1
     return freq
 
-def get_frequency_7day(username, account):
+def get_frequency_7day(username):
     '''
     return an list of integers of the number of data access in the past 7 days
     '''
-    pass
+    freq = [0] * 7
+    now = datetime.date()
+    last_week = now - timedelta(days=7)
+    filtered_list = filter(lambda x: last_week <= x['time'] <= now, DATA['data'])
+    #filtered_list_sorted = sorted(filtered_list, key=lambda x: x['time'])
 
-
-
-
+    for i in range(7, 0, -1):
+        date_lo, date_hi = now - timedelta(days=i), now - timedelta(days=i-1)
+        for data in DATA['data']:
+            if date_lo <= data['date'] <= date_hi:
+                freq[i-1] += 1
+    return freq
