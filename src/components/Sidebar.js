@@ -76,10 +76,11 @@ export default function Sidebar(props) {
                 <Tab label="Dashboard" {...a11yProps(0)} />
                 <Tab label="Accounts" {...a11yProps(1)} />
             </Tabs>
-            {show === "Accounts" && accounts.map((company, idx) => {
+            {show !== "Dashboard" && accounts.map((company, idx) => {
                 return (
                     <Tabs orientation="vertical"
-                        variant="scrollable">
+                        variant="scrollable"
+                        onChange={handleChange}>
                         <Tab label={company.name} value={company.name} />
                     </Tabs>
                 )
