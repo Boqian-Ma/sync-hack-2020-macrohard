@@ -2,8 +2,14 @@ from datetime import datetime
 
 # datetime(year, month, day, hour, minute, second, microsecond)
 
-companies = {'facebook': [] , 'google': [], 'linkedin':[] , 'tiktok':[] , 'twitter': [], 'telegram':[], 'davidjones':[]}
 
+companies = {   'facebook': ['location','login_location', 'gender, ''following', "connections", 'recent_activities', 'searches'], 
+                'google': ['location','gender', 'age', 'hobbies', 'youtube_history', 'recent_activities', 'searches', 'deletions', 'internship_rejection_emails'], 
+                'linkedin':['location','login_location', 'gender, ''following', "connections", 'recent_activities', 'searches'], 
+                'tiktok':['viewing_history', 'gender', 'age', 'location'], 
+                'twitter': ['location','login_location', 'gender, ''following', "connections", 'recent_activities', 'searches'], 
+                'telegram':['location'], 
+                'davidjones':['purchase_history', 'gender', 'age']}
 DATA = {
     'users': [
         {   'username': 'adamma', #primary key
@@ -20,8 +26,7 @@ DATA = {
     'data': [ 
         {'time': datetime(2020, 1, 1, 12, 14, 34), 'username': 'adammbq', 'company': 'facebook', 'note': "advertisement"},
         {'time': datetime(2020, 1, 1, 12, 14, 34), 'username': 'adammbq', 'company': 'facebook', 'note': "advertisement"},
-        {'time': datetime(2020, 1, 1, 12, 14, 34), 'username': 'adammbq', 'company': 'facebook', 'note': "advertisement"},
-        {'time': datetime(2020, 1, 1, 12, 14, 34), 'username': 'adammbq', 'company': 'facebook', 'note': "advertisement"},
+        {'time': datetime(2020, 1, 1, 12, 14, 34), 'username': 'adammbq', 'company': 'facebook', 'note': "advertisement"}
     ]
 }
 
