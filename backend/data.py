@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 
 # datetime(year, month, day, hour, minute, second, microsecond)
 
+grades = 
 
 companies = {   'facebook': ['location','login_location', 'gender, ''following', "connections", 'recent_activities', 'searches'], 
                 'google': ['location','gender', 'age', 'hobbies', 'youtube_history', 'recent_activities', 'searches', 'deletions', 'internship_rejection_emails'], 
@@ -17,11 +18,6 @@ DATA = {
             'email': "adammbq@gmail.com",
             'accounts': ['facebook', 'google', 'linkedin'] # render these at top
         },
-        {   'username': 'mattjuan', #primary key
-            'password': '123456', 
-            'email': "mattjuan@gmail.com",
-            'accounts': ['facebook', 'google', 'tiktok'] # render these at top
-        }
     ],
     'data':  [{'time': datetime(2020, 8, 22, 4, 42, 8), 'username': 'adammbq', 'company': 'tiktok', 'note': 'maps'},
 {'time': datetime(2020, 8, 22, 5, 43, 19), 'username': 'adammbq', 'company': 'linkedin', 'note': 'search_engine'},
