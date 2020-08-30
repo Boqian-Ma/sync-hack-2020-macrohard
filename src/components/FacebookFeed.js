@@ -36,7 +36,7 @@ export default function LongTextSnackbar() {
     "11:11:15 | Twitter: Your phone number has been shared for advertisements.",
     "11:11:19 | Google: Your address has been shared for demographic analysis.",
     "11:11:15 | Amazon: Your age has been used for tailored product advertisements.",
-    "11:11:19 | Google: Your location has been used for demographic tailored product advertisements.",
+    "11:11:19 | Google: Your location has been used for  product advertisements.",
     "11:11:25 | Instagram: Your age has been used for product advertisements.",
     "11:11:26 | TikTok: Your email has been used for promotions.",
     "11:11:30 | LinkedIn: Your email has been used for promotions.",
